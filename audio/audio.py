@@ -21,7 +21,6 @@ def play_wav_file(wav, fs):
 def plot_spectrogram(wav, sample_rate):
     D = librosa.stft(wav, n_fft=512)  # STFT of y
     S_db = librosa.amplitude_to_db(np.abs(D), ref=np.max)
-
     fig, ax = plt.subplots()
     img = librosa.display.specshow(S_db, x_axis='time', y_axis='linear', ax=ax)
     ax.set(title='Now with labeled axes!')
@@ -44,3 +43,4 @@ def plot_spectrogram_mel(wav, sample_rate):
 # wav, sr = load_wav(AUDIO_PATH + 'p231_014.wav', sr=16000)
 #
 # play_wav_file(wav, sr)
+
